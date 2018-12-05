@@ -14,12 +14,18 @@ class ExportUsers:
     def __init__(self):
         pass
     def pcsv(pobject,filename):
-        with open(filename, 'w', newline='') as csvfile:
-            uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            for i in pobject:
-                uwriter.writerow([i.id, i.password, i.salution, i.getfName(),i.getmName(), i.getlName(), i.getRev()])
+        try:
+            with open(filename, 'w', newline='') as csvfile:
+                uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                for i in pobject:
+                    uwriter.writerow([i.id, i.password, i.salution, i.getfName(),i.getmName(), i.getlName(), i.getRev()])
+        except:
+            print("Error while exporting patiient file")
     def ecsv(pobject,filename):
-        with open(filename, 'w', newline='') as csvfile:
-            uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
-            for i in pobject:
-                uwriter.writerow([i.name, i.time])
+        try:
+            with open(filename, 'w', newline='') as csvfile:
+                uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
+                for i in pobject:
+                    uwriter.writerow([i.name, i.time])
+        except:
+            print("Error while exporting exercise file")

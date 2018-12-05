@@ -20,5 +20,6 @@ def my_suite():
     suite.addTest(unittest.makeSuite(TestFileio)) 
     runner = unittest.TextTestRunner() 
     print(runner.run(suite))
+    print(result)
 my_suite()
 

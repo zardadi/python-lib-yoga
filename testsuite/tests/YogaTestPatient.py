@@ -2,7 +2,7 @@
 
 # In[31]:
 import os,sys, unittest
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../'))
+parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
 if parent_dir not in sys.path:
     sys.path.insert(0, parent_dir)
 
