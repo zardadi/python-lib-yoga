@@ -6,4 +6,4 @@ install:
   - pip install matplotlib
   
 script:
-  - python testsuite/TestSuite.py
+  - python TestSuite.py
