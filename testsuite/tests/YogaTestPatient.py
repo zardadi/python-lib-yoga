@@ -58,7 +58,40 @@ class TestPatient(unittest.TestCase):
         self.assertEqual(self.p5._Patient__fName,'Mohan')
         self.assertEqual(self.p6._Patient__fName,'Amit')
         self.assertEqual(self.p7._Patient__fName,'Shree')
-
-unittest.main(argv=[''], verbosity=2, exit=False)
+    def test_AddRev(self):
+        self.p1.addRev(100)
+        self.assertEqual(self.p1.getRev(),100)
+        self.assertEqual(self.p1.addRev('ab'), 'Invalid')
+    def test_getlName(self):
+        self.p3.setlName("Mohan")
+        self.assertEqual(patient.Patient.getlName(self.p3),'Mohan')
+        self.p3.setlName('Suresh')
+        self.assertEqual(patient.Patient.getlName(self.p3),'Suresh')
+    def test_setlName(self):
+        self.p3.setlName("Mohan")
+        self.assertEqual(patient.Patient.getlName(self.p3),'Mohan')
+        self.p3.setlName('Suresh')
+        self.assertEqual(patient.Patient.getlName(self.p3),'Suresh')
+    def test_getmName(self):
+        self.p3.setmName("Mohan")
+        self.assertEqual(patient.Patient.getmName(self.p3),'Mohan')
+        self.p3.setmName('Suresh')
+        self.assertEqual(patient.Patient.getmName(self.p3),'Suresh')
+    def test_setmName(self):
+        self.p3.setmName("Mohan")
+        self.assertEqual(patient.Patient.getmName(self.p3),'Mohan')
+        self.p3.setmName('Mohsen')
+        self.assertEqual(patient.Patient.getmName(self.p3),'Mohsen')
+    def test_display(self):
+        rtn1=self.p3.display()
+        self.assertEqual(rtn1,0)
+        rtn1=self.p1.display()
+        self.assertEqual(rtn1,0)
+    def test_User(self):
+        p1 = patient.Patient('12e', 'pass1', 'Mr.','Rajeev', 'Ranjan', 'Roy')
+        self.assertNotIsInstance(p1.id, int)
+        
+        
+#unittest.main(argv=[''], verbosity=2, exit=False)
               
 

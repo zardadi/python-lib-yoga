@@ -49,5 +49,12 @@ class TestExercise(unittest.TestCase):
         self.assertEqual(rtn1,0)
         rtn1=self.e7.display()
         self.assertEqual(rtn1,0)
+    def test_User1(self):
+        e1 = exercise.Exercise('Nadi Shuddhi', '12e')  
+        self.assertNotIsInstance(e1.time, int)
+    def test_User2(self):
+        e1 =exercise.Exercise( 'a', 250)  
+        self.assertNotEqual(e1.name, 'a')
+
 #unittest.main(argv=[''], verbosity=2, exit=False)
 
