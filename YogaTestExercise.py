@@ -3,7 +3,7 @@
 
 # In[12]:
 import os,sys, unittest
-  sys.path.insert(0, parent_dir)
+ 
 
 
 from yoga.patient import exercise
