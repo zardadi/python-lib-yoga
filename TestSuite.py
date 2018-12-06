@@ -8,8 +8,8 @@ import unittest
 
 #from tests.YogaTestPatient import TestPatient 
 #from tests.YogaTestExercise import TestExercise 
-import TestFileio
-import TestPlot
+from YogaTestFileio import TestFileio
+from YogaTestPlot import TestPlot
     
 def my_suite():
     suite = unittest.TestSuite()

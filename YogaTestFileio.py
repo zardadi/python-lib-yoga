@@ -1,14 +1,5 @@
+import unittest,os
 
-# coding: utf-8
-
-# In[4]:
-
-
-import unittest
-import os,sys
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
     
 from yoga.output import fileio
 from yoga.patient import patient
@@ -99,5 +90,5 @@ class TestFileio(unittest.TestCase): # test class
     
     
 
-unittest.main()
+#unittest.main()
 

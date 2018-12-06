@@ -71,5 +71,5 @@ class TestPlot(unittest.TestCase): # test class
         e = plot.Plot.exercise(Exercise._registery)
         self.assertTrue(e)
 
-unittest.main()
+#unittest.main()
 
