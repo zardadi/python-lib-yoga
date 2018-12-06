@@ -11,14 +11,14 @@ if parent_dir not in sys.path:
     sys.path.insert(0, parent_dir)
 
 from yoga.output import plot
-from yoga.patient import patient
-from yoga.patient import exercise
+from yoga.patient.patient import Patient
+from yoga.patient.exercise import Exercise
 
 class TestPlot(unittest.TestCase): # test class
-    print("testing enviroment")
+    print("YogaTestPlot")
     @classmethod
     def setUpClass(cls):
-        print('setupClass')
+        print('Test Plot setupClass')
 
     @classmethod
     def tearDownClass(cls):
@@ -26,11 +26,14 @@ class TestPlot(unittest.TestCase): # test class
         
     def setUp(self): 
         print('setup...')
-        self.p1=patient.Patient("rroy","pass","Mr.","Rajeev","","Roy")
-        self.p2=patient.Patient("mzardadi", "pass", "Mr.", "Mohsen", "","Zardadi")
-        self.p3=patient.Patient("mroberto", "pass", "Mr.", "Maziar", "","Roberto")
-        self.ex1 = exercise.Exercise("Surya Namaskar", 30)
-        self.ex2 = exercise.Exercise("Savasana", 10)
+        Patient._registery=[]
+        Exercise._registery=[]
+        self.p1=Patient("rroy","pass","Mr.","Rajeev","","Roy")
+        self.p2=Patient("mzardadi", "pass", "Mr.", "Mohsen", "","Zardadi")
+        self.p3=Patient("mroberto", "pass", "Mr.", "Maziar", "","Roberto")
+        self.ex1 = Exercise("Surya Namaskar", 30)
+        self.ex2 = Exercise("Savasana", 10)
+        print("Setup completed")
         
     def tearDown(self):
         print('tear down ...')
@@ -41,43 +44,42 @@ class TestPlot(unittest.TestCase): # test class
         del self.ex2
 
     def test_revenue(self):
-        a=b=c=d=e=True
+        print("In test Revenue")
         self.p1.addRev(100)
         self.p2.addRev(200)
         self.p3.addRev(300)
-        a = plot.Plot.revenue(patient.Patient._registery)
+        a = plot.Plot.revenue(Patient._registery)
         self.assertTrue(a)
         self.p1.addRev(400)
-        b = plot.Plot.revenue(patient.Patient._registery)
-        self.assertTrue(b)
+        b = plot.Plot.revenue(1)
+        self.assertFalse(b)
         self.p2.addRev(-200)
         self.p1.addRev(-400)
-        c = plot.Plot.revenue(patient.Patient._registery)
-        self.assertTrue(c)
+        c = plot.Plot.revenue("Test")
+        self.assertFalse(c)
         self.p3.addRev(100)
-        d = plot.Plot.revenue(patient.Patient._registery)
+        d = plot.Plot.revenue(Patient._registery)
         self.assertTrue(d)
         self.p3.addRev(-200)
-        e = plot.Plot.revenue(patient.Patient._registery)
+        e = plot.Plot.revenue(Patient._registery)
         self.assertTrue(e)
-        
+        a=plot.Plot()
         
     def test_exercis(self):
-        
-        a=b=c=d=e=True
-        a = plot.Plot.exercise(exercise.Exercise._registery)
+        print("In test Exercise")
+        a = plot.Plot.exercise(Exercise._registery)
         self.assertTrue(a)
         self.ex2.time = 100
-        b = plot.Plot.exercise(exercise.Exercise._registery)
-        self.assertTrue(b)
-        c = plot.Plot.exercise(exercise.Exercise._registery)
-        self.assertTrue(c)
+        b = plot.Plot.exercise(1)
+        self.assertFalse(b)
+        c = plot.Plot.exercise("Test")
+        self.assertFalse(c)
         self.ex2.time = 200
-        d = plot.Plot.exercise(exercise.Exercise._registery)
+        d = plot.Plot.exercise(Exercise._registery)
         self.assertTrue(d)
         self.ex1.time = 150
-        e = plot.Plot.exercise(exercise.Exercise._registery)
+        e = plot.Plot.exercise(Exercise._registery)
         self.assertTrue(e)
 
-#unittest.main(argv=[''], verbosity=2, exit=False)
+unittest.main()
 

@@ -13,7 +13,7 @@ from yoga.patient import exercise
 class TestExercise(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print('setupClass')
+        print('Test Exercise setupClass')
         cls.e1=exercise.Exercise('Nadi Shuddhi', 6)                    
         cls.e1.display()
         cls.e2=exercise.Exercise('Bhramari', 3)                    

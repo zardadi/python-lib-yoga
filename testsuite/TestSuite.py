@@ -10,7 +10,7 @@ from tests.YogaTestPatient import TestPatient
 from tests.YogaTestExercise import TestExercise 
 from tests.YogaTestFileio import TestFileio
 from tests.YogaTestPlot import TestPlot
-
+    
 def my_suite():
     suite = unittest.TestSuite()
     result = unittest.TestResult()

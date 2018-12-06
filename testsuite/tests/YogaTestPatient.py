@@ -12,7 +12,7 @@ from yoga.patient import patient
 class TestPatient(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print('setupClass')
+        print('Test Patient setupClass')
         cls.p1=patient.Patient(1, 'pass1', 'Mr.','Rajeev', 'Ranjan', 'Roy')                    
         #cls.p1.display()
         cls.p2=patient.Patient(2, 'pass2', 'Mr.','Mohsen', '', 'Zardadi')

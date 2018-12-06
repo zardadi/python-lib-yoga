@@ -1,14 +1,3 @@
-#file fileio.py
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Nov 21 14:27:07 2018
-
-@author: rajeevroy
-
-export the customer details to a file
-"""
-
-#import csv module
 import csv
 class ExportUsers:
     def __init__(self):
@@ -19,13 +8,17 @@ class ExportUsers:
                 uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
                 for i in pobject:
                     uwriter.writerow([i.id, i.password, i.salution, i.getfName(),i.getmName(), i.getlName(), i.getRev()])
+            return True
         except:
             print("Error while exporting patiient file")
+            return False
     def ecsv(pobject,filename):
         try:
             with open(filename, 'w', newline='') as csvfile:
                 uwriter = csv.writer(csvfile, delimiter=',', quotechar='|', quoting=csv.QUOTE_MINIMAL)
                 for i in pobject:
                     uwriter.writerow([i.name, i.time])
+            return True
         except:
             print("Error while exporting exercise file")
+            return False

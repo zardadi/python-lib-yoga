@@ -1,6 +1,10 @@
 language: python
 python:
-  - "3.4"
-  - "3.5"
+  - "3.6"
+
+install:
+  - pip install matplotlib
+  
 script:
-  - python testsuite/TestSuite.py
+  - python testsuite/tests/YogaTestPlot.py
+  - python testsuite/tests/YogaTestFileo.py

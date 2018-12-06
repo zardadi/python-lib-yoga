@@ -20,7 +20,7 @@ class TestFileio(unittest.TestCase): # test class
     print("testing enviroment")
     @classmethod
     def setUpClass(cls):
-        print('setupClass')
+        print('Test File IO setupClass')
 
     @classmethod
     def tearDownClass(cls):
@@ -53,14 +53,13 @@ class TestFileio(unittest.TestCase): # test class
             
     
     def test_pcsv(self):
-
+        a=True
         fileio.ExportUsers.pcsv(patient.Patient._registery,"test1.csv")
         state = os.path.isfile('./test1.csv')      
         self.assertTrue(state)
         
-        fileio.ExportUsers.pcsv(patient.Patient._registery,"test2.csv")
-        state = os.path.isfile('./test2.csv')      
-        self.assertTrue(state)
+        a=fileio.ExportUsers.pcsv("Error","test2.csv")
+        self.assertFalse(a)
         
         fileio.ExportUsers.pcsv(patient.Patient._registery,"test3.csv")
         state = os.path.isfile('./test3.csv')      
@@ -75,13 +74,13 @@ class TestFileio(unittest.TestCase): # test class
         self.assertTrue(state)
 
     def test_ecsv(self):
+        a=True
         fileio.ExportUsers.ecsv(exercise.Exercise._registery,"test1.csv")
         state = os.path.isfile('./test1.csv')      
         self.assertTrue(state)
         
-        fileio.ExportUsers.ecsv(exercise.Exercise._registery,"test2.csv")
-        state = os.path.isfile('./test2.csv')      
-        self.assertTrue(state)
+        a=fileio.ExportUsers.ecsv("Error File","test2.csv")   
+        self.assertFalse(a)
         
         fileio.ExportUsers.ecsv(exercise.Exercise._registery,"test3.csv")
         state = os.path.isfile('./test3.csv')      
@@ -94,10 +93,11 @@ class TestFileio(unittest.TestCase): # test class
         fileio.ExportUsers.ecsv(exercise.Exercise._registery,"test5.csv")
         state = os.path.isfile('./test5.csv')      
         self.assertTrue(state)
+        a=fileio.ExportUsers()
         
     
     
     
 
-#unittest.main(argv=[''], verbosity=2, exit=False)
+unittest.main()
 
