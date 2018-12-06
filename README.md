@@ -1,2 +1,4 @@
-# data_533_lab3_mohsen_rroy
-data 533 lab 3
+# data_533_lab4_mohsen_rroy
+
+
+[![Build Status](https://travis-ci.org/rroygithub/data-533-lab4-mohsen-roy.svg?branch=master)](https://travis-ci.org/rroygithub/data-533-lab4-mohsen-roy)
