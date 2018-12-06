@@ -1,14 +1,4 @@
-
-# coding: utf-8
-
-# In[4]:
-
-
-import unittest, sys, os
-
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
+import unittest
 
 from yoga.output import plot
 from yoga.patient.patient import Patient
