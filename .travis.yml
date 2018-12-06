@@ -6,5 +6,4 @@ install:
   - pip install matplotlib
   
 script:
-  - python testsuite/tests/YogaTestPlot.py
-  - python testsuite/tests/YogaTestFileo.py
+  - python testsuite/TestSuite.io
