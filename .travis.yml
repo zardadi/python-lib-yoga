@@ -3,4 +3,5 @@ python:
 - "3.4"
 - "3.5"
 script:
-- python TestModule1.py
+- python YogaTestExercise.py
+- python YogaTestPatient.py
