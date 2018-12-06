@@ -4,8 +4,6 @@ python:
 
 install:
   - pip install matplotlib
-  - pip install os
-  - pip install sys
   
 script:
-  - python testsuite/TestSuite.py
+  - python TestSuite.py
