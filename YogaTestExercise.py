@@ -3,17 +3,14 @@
 
 # In[12]:
 import os,sys, unittest
-parent_dir = os.path.normpath(os.path.join(os.getcwd(),'../..'))
-if parent_dir not in sys.path:
-    sys.path.insert(0, parent_dir)
-
 
 from yoga.patient import exercise
 
 class TestExercise(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        print('Test Exercise setupClass')
+
+        print('setupClass')
         cls.e1=exercise.Exercise('Nadi Shuddhi', 6)                    
         cls.e1.display()
         cls.e2=exercise.Exercise('Bhramari', 3)                    
@@ -49,5 +46,12 @@ class TestExercise(unittest.TestCase):
         self.assertEqual(rtn1,0)
         rtn1=self.e7.display()
         self.assertEqual(rtn1,0)
-unittest.main(argv=[''], verbosity=2, exit=False)
+    def test_User1(self):
+        e1 = exercise.Exercise('Nadi Shuddhi', '12e')  
+        self.assertNotIsInstance(e1.time, int)
+    def test_User2(self):
+        e1 =exercise.Exercise( 'a', 250)  
+        self.assertNotEqual(e1.name, 'a')
+
+#unittest.main(argv=[''], verbosity=2, exit=False)
 
