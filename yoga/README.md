@@ -1,7 +1,7 @@
 
 # Yoga package
 
-Yoga package is a package to use for this website: https://treatwithyoga.com/ 
+Yoga package was designed to be used for a yoga treatmet app (https://treatwithyoga.com/)
 
 The package has two subpackages:
 
